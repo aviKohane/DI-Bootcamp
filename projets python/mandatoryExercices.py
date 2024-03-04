@@ -37,3 +37,4 @@ for i in basket:
 basket.clear()
 print(basket)
 
+print
