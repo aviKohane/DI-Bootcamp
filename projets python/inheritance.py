@@ -1,3 +1,7 @@
+# As you work on a exercise, you should add and commit your work every 30mins.
+# When you are done with your work, push all the modifications to your github repository.
+# git push origin main
+
 class Door:
     def __init__(self , is_opened):
         self.is_opened = is_opened
