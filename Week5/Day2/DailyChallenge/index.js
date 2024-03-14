@@ -21,3 +21,26 @@ else if (wordBad < wordNot) {
     console.log("The result is : " + sentence);
 }
 
+
+// Write a JavaScript program that recreates the pattern below.
+// Do this challenge twice: first by using one loop, then by using two nested for loops (Nested means one inside the other - check out this tutorial of nested loops).
+// Do this Daily Challenge by yourself, without looking at the answers on the internet.
+// *  
+// * *  
+// * * *  
+// * * * *  
+// * * * * *
+// * * * * * *
+let starsLine = ""
+for (let i = 0; i < 6; i++) {
+    starsLine += "* ";
+    console.log(starsLine);
+}
+
+for (let i = 1; i <= 6; i++) {
+    let pattern = '';
+    for (let j = 1; j <= i; j++) {
+        pattern += '* ';
+    }
+    console.log(pattern);
+}
