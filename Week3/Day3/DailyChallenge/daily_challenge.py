@@ -64,3 +64,4 @@ print(circle1 < circle2)  # Output: True
 circle_list = [Circle(radius=2), Circle(radius=5), Circle(radius=1)]
 sorted_circles = sorted(circle_list)
 print([str(circle) for circle in sorted_circles])  # Output: ['Circle(radius=1, diameter=2)', 'Circle(radius=2, diameter=4)', 'Circle(radius=5, diameter=10)']
+
