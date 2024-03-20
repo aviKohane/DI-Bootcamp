@@ -153,8 +153,8 @@ function hotelCost() {
 function planeRideCost() {
     let destination;
     do {
-        destination = prompt("Please enter your destination(London,Paris or other):").toLowerCase
-    } while (destination != "paris" || destination != "london" || destination != "other");
+        destination = prompt("Please enter your destination(London,Paris or other):").toLowerCase();
+    } while (destination !== "paris" && destination !== "london" && destination !== "other");
     switch (destination) {
         case "london":
             return 183;
@@ -172,10 +172,10 @@ function planeRideCost() {
 // If the user rents a car for more than 10 days, they get a 5% discount.
 // The function should return the total price of the car rental.
 function rentalCarCost() {
+    let rentCarDays;
     do {
-        let rentCarDays;
         rentCarDays = prompt("Please enter the number of days you would like to rent the car:")
-    } while (isNaN(rentCarDays) || rentCarDays === null || rentCarDays.trim() === "");
+    } while (isNaN(rentCarDays) && rentCarDays === null && rentCarDays.trim() === "");
     let carCost = parseInt(rentCarDays * 40);
     if (parseInt(rentCarDays) > 10) {
         carCost *= 0.95;
@@ -187,8 +187,20 @@ function rentalCarCost() {
 // Example : The car cost: $x, the hotel cost: $y, the plane tickets cost: $z.
 // Hint: You have to call the functions hotelCost(), planeRideCost() and rentalCarCost() inside the function totalVacationCost().
 function totalVacationCost() {
-    return `the car cost: ${rentalCarCost()}$, the hotel cost: ${hotelCost()}$, the plane tickets cost: ${planeRideCost()}$. `
+    const hotel = hotelCost();
+    const planeTicket = planeRideCost();
+    const carRental = rentalCarCost();
+
+    const totalCost = hotel + planeTicket + carRental;
+    console.log(`The hotel cost: $${hotel}, the plane tickets cost: $${planeTicket}, the car rental cost: $${carRental}.`);
+    console.log(`Total vacation cost: $${totalCost}.`);
+    return totalCost;
 }
+
 // Call the function totalVacationCost()
 totalVacationCost();
+
 // Bonus: Instead of using a prompt inside the 3 first functions, only use a prompt inside the totalVacationCost() function. You need to change the 3 first functions, accordingly.
+
+
+
