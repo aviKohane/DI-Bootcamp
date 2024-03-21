@@ -204,3 +204,77 @@ totalVacationCost();
 
 
 
+// Exercise 7 : My Book List
+// Instructions
+
+// The point of this challenge is to display a list of two books on your browser.
+
+// In the body of the HTML page, create an empty section:
+// <section class="listBooks"></section>
+
+// In the js file, create an array called allBooks. This is an array of objects. Each object is a book that has 4 keys (ie. 4 properties) :
+// title,
+// author,
+// image : a url,
+// alreadyRead : which is a boolean (true or false).
+// Create an array called allBooks
+// Initiate the array with 2 books of your choice (ie. Add manually 2 books objects in the array)
+const allBooks = [
+    {
+        title: "Harry Potter and the Philosopher's Stone",
+        author: 'J. K. Rowling',
+        image: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Harry_Potter_and_the_Philosopher%27s_Stone_banner.jpg/330px-Harry_Potter_and_the_Philosopher%27s_Stone_banner.jpg',
+        alreadyRead: false
+    },
+    {
+        title: 'The Little Prince',
+        author: '	Antoine de Saint-Exupéry',
+        image: 'https://upload.wikimedia.org/wikipedia/en/0/05/Littleprince.JPG',
+        alreadyRead: true
+    },
+
+];
+
+
+// Requirements : All the instructions below need to be coded in the js file:
+// Using the DOM, render each book inside a div (the div must be added to the <section> created in part 1).
+// For each book :
+// You have to display the book’s title and the book’s author.
+// Example: HarryPotter written by JKRolling.
+// The width of the image has to be set to 100px.
+// If the book is already read. Set the color of the book’s details to red.
+
+
+// Iterate through each book in the allBooks array
+allBooks.forEach(book => {
+    // Create a div element to contain each book
+    let bookDiv = document.createElement('div');
+
+    // Set the class of the book div
+    bookDiv.classList.add('book');
+
+    // Create a paragraph element for displaying the book details
+    let detailsPara = document.createElement('p');
+
+    // Set the text content of the details paragraph
+    detailsPara.textContent = `${book.title} written by ${book.author}.`;
+
+    // Set the color of the details paragraph to red if the book is already read
+    if (book.alreadyRead) {
+        detailsPara.style.color = 'red';
+    }
+
+    // Create an image element for displaying the book cover
+    let imageElement = document.createElement('img');
+
+    // Set the source and width attributes of the image element
+    imageElement.src = book.image;
+    imageElement.width = '100';
+
+    // Append the details paragraph and image element to the book div
+    bookDiv.appendChild(detailsPara);
+    bookDiv.appendChild(imageElement);
+
+    // Append the book div to the section element
+    document.querySelector('section').appendChild(bookDiv);
+});
