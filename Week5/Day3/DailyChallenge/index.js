@@ -36,7 +36,7 @@ for (const planet of planets) {
         const moonDiv = document.createElement('div');
         moonDiv.classList.add('moon');
         // search on internet : js change element position
-        moonDiv.style.left = i * 20 + "px";
+        moonDiv.style.left = i * 15 + "px";
         planetDiv.appendChild(moonDiv);
     }
 
